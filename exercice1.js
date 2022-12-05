@@ -1,7 +1,12 @@
-let elem = document.getElementById('listeCourse');
+
 let send = document.getElementById("send");
 let item = document.getElementById("item");
 let del = document.getElementById("del");
+
+let myList = document.getElementById("listeCourse") // UL
+let myFilter = document.getElementById("filter") // UL
+
+let link = document.createElement("span")
 
 
 let articles = [
@@ -16,21 +21,33 @@ let articles = [
 ];
 
 
-for (let obj of articles){
+myFilter.addEventListener("click", function (){
+    articles.sort();
+    console.log(articles);
+    myFunc()
+})
 
-    let list = document.createElement('li')
+myFunc()
 
-    list.innerHTML = obj;
-    elem.appendChild(list)
+send.addEventListener("click", function (){
+    articles.push(item.value)
+    myFunc()
+})
 
-    send.addEventListener('click', function (){
-        let add = document.createElement('li');
-        list.lastChild(add)
-        add.innerHTML = item.value
-    })
+del.addEventListener("click", function (){
+    articles.pop()
+    myFunc()
+})
 
+function myFunc() {
+    myList.innerHTML  = "";
 
-    del.addEventListener("click", function (){
-        list.innerHTML += "test"
-    })
+    for (let obj of articles){
+        let list = document.createElement('li')
+        list.innerHTML = obj;
+        myList.appendChild(list)
+        list.addEventListener("click", function (){
+            list.remove()
+        })
+    }
 }

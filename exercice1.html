@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Liste de course</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="viewport">
         <input id="item" type="text" placeholder="Votre item">
         <input id="send" type="submit" placeholder="SEND">
-        <input id="del" type="submit" name="SUPP">
+        <input id="del" type="submit" name="SUPP" value="Supprimer">
+        <input id="filter" type="submit" name="SUPP" value="Trier par ordre alphabétique">
+        <div class="container">
+            <ul id="listeCourse">
 
-        <ul id="listeCourse">
-            <p id="crete"></p>
-        </ul>
+            </ul>
+        </div>
     </div>
 
     <script type="text/javascript" src="exercice1.js"></script>

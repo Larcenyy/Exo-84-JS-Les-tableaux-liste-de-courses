@@ -1,0 +1,13 @@
+
+*{
+    font-family: Arial,sans-serif;
+}
+.container{
+    background: lightblue;
+    padding: 1.5rem;
+    color:black;
+}
+ul{
+    display: flex;
+    gap: 2.5rem;
+}
